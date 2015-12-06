@@ -1,4 +1,4 @@
-(defproject threesixfive "0.1.0-SNAPSHOT"
+(defproject threesixfive "0.0.1"
 
   :description "ThreeSixFive"
   :url "https://www.github.com/credmp/threesixfive"
