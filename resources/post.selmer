@@ -1,0 +1,16 @@
+---
+layout: post
+title: {{ index }} / 365
+modified:
+categories: threesixfive
+excerpt:
+tags: []
+image:
+  feature: threesixfive/{{ index }}.jpg
+  thumb: threesixfive/{{ index }}-thumb.jpg
+date: {{ createdate }}
+---
+
+# Day {{ index }} of 365
+
+{{ caption }}
