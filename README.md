@@ -1,36 +1,41 @@
 # threesixfive
 
-FIXME: description
+A simple Instagram client that generates my 365 days project gallery
 
 ## Installation
 
-Download from http://example.com/FIXME.
+Download from https://github.com/credmp/threesixfive.
 
 ## Usage
 
-FIXME: explanation
+Given the config.edn in the current directory you can run the application as follows:
 
-    $ java -jar threesixfive-0.1.0-standalone.jar [args]
+    $ lein run
 
 ## Options
 
-FIXME: listing of options this app accepts.
+Options are set in a config file called config.edn. This file will be overwritten
+each time the application runs in order to store the last id taken from Instagram.
+
+    {
+     :client_id "INSTAGRAM_CLIENT_ID",
+     :userid INSTAGRAM_USER_ID
+     :output {:images "IMAGE_DIR",
+              :posts "JEKYLL_POST_DIR"}
+    }
+
 
 ## Examples
 
-...
+My gallery: https://www.wiersma.org/threesixfive/
+My instagram: https://www.instagram.com/credmp/
 
 ### Bugs
 
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+Probably plenty as it is very specific to my setup.
 
 ## License
 
-Copyright © 2015 FIXME
+Copyright © 2015 Arjen Wiersma
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Distributed under the MIT License.
