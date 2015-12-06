@@ -34,6 +34,7 @@
   (t/plus (t/epoch) (t/seconds secondsSinceEpoch)))
 
 (defn create-post [config data]
+  (println "Creating post " data)
   (let [postdir (-> config :output :posts)]
     (spit (str postdir "/" (:createdate data) "-" (:index data)  ".md")
      (s/render-file "post.selmer" data)))
@@ -56,8 +57,7 @@
           ;; create post
           (create-post config {:index (get-threesixfive caption)
                                :caption (caption->markdown caption)
-                               :createdate datestr})))
-      )))
+                               :createdate datestr}))))))
 
 (defn get-instagram-url [config]
   (str "https://api.instagram.com/v1/users/3278894/media/recent/?client_id="
@@ -76,8 +76,7 @@
             rhs (if (number? last) last (Long/parseLong last))]
         (if (> lhs rhs)
           lhs
-          rhs
-          )))))
+          rhs)))))
 
 (defn get-instagram-posts [config url]
   (let [data (client/get url)
@@ -100,7 +99,9 @@
   (get-instagram-posts config  (get-instagram-url config))
   )
 
-(defn main- []
+(defn -main []
+  (println "Starting to retrieve Instagram posts")
   (let [config (read-string (slurp "config.edn"))]
     (spit "config.edn" (iterate-instragram config)))
+  (println "Done with Instagram")
   )
