@@ -1,0 +1,5 @@
+{
+ :client_id "INSTAGRAM_CLIENT_ID",
+ :output {:images "IMAGE_DIR",
+          :posts "JEKYLL_POST_DIR"}
+ }
